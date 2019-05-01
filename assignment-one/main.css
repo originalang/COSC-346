@@ -38,6 +38,7 @@ body {
 
 #pokedex th {
     background-color: rgb(255, 159, 159);
+    padding: 7px;
 }
 
 #pokedex tr:hover {
