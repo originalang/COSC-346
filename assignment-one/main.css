@@ -1,0 +1,72 @@
+/* import fonts  */
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+
+body {
+    background-color: rgb(247, 126, 126);
+    color: rgb(255, 254, 254);
+    font-size: 1.2em;
+}
+
+.logo {
+    padding: 30px;
+}
+
+.logo > img {
+    height: 5rem;
+}
+
+.logo > span {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Gugi', cursive;
+    font-size: 6rem;
+}
+
+#theme-song {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#pokedex {
+    font-family: 'Gugi', cursive;    
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    padding: 30px;
+}
+
+#pokedex th {
+    background-color: rgb(255, 159, 159);
+}
+
+#pokedex tr:hover {
+    background-color: rgb(255, 159, 159);
+}
+
+#mailing-form h2{
+    font-size: 3em;
+}
+
+.form-input {
+    padding-top: 10px;
+    padding-bottom: 20px;   
+}
+
+.form-input input {
+    height: 20px;
+}
+
+#submit {
+    color: white;
+    border: none;
+    background-color: rgb(182, 37, 37);
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#submit:hover {
+    background-color: rgb(255, 94, 94);
+} 
