@@ -39,11 +39,19 @@ main {
 }
 
 main section:nth-child(even) {
-    background-color: rgb(255, 205, 205)
+    background-color: rgb(255, 205, 205);
+}
+
+main section:nth-child(even):hover {
+    border-left: 8px solid rgb(255, 110, 110);
 }
 
 main section:nth-child(odd) {
-    background-color: rgb(209, 255, 205)
+    background-color: rgb(209, 255, 205);
+}
+
+main section:nth-child(odd):hover {
+    border-left: 8px solid rgb(119, 255, 107);
 }
 
 section {
