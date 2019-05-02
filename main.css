@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Signika');
+
+body {
+    background-color: #7a7dff;
+}
+
+#grid-list li {
+    background-color: rgb(131, 170, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 12em;
+    margin: 1em;
+    width: 12em;
+}
+
+#grid-list li:hover {
+    background-color: rgb(162, 189, 247);
+}
+
+#grid-list li a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+#grid-list li a {
+    align-content: center;
+    display: inline-block;
+    height: 100%;
+    text-decoration: none;
+    width: 100%;
+}
+
+#grid-list li a:visited {
+    color: white;
+}
+
+.grid-list-content {
+    margin-top: 40%;
+}
+
+.grid-list-content span {
+    display: block;
+    top: 30px;
+}
+
+.grid-list-content span:nth-child(1) {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.grid-list-content span:nth-child(2) {
+    font-size: 1em;
+    text-transform: lowercase;
+}
