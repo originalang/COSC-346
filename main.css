@@ -29,13 +29,8 @@ body {
 }
 
 #grid-list li a {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-}
-
-#grid-list li a {
     align-content: center;
+    color: white;
     display: inline-block;
     height: 100%;
     text-decoration: none;
