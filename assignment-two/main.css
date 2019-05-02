@@ -1,0 +1,30 @@
+div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.small {
+    height: 100px;
+    width: 100px;
+}
+
+.big {
+    height: 150px;
+    width: 150px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.blue {
+    background-color: #0074d9;
+}
+
+.orange {
+    background-color: #FF851B;
+}
+
+.border {
+    border: 5px solid black;
+}
