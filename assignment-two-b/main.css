@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    align-items: center;
+    background-color: rgb(115, 164, 255);
+    display: flex;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+aside {
+    background-color: rgb(250, 255, 204);
+    height: 100%;
+    margin-top: 100px;
+    position: fixed;
+    width: 200px;
+}
+
+main {
+    height: 100%;
+    left: 200px;
+    position: fixed;
+    overflow: scroll;    
+    top: 100px;
+    width: 100%;
+}
+
+main section:nth-child(even) {
+    background-color: rgb(255, 205, 205)
+}
+
+main section:nth-child(odd) {
+    background-color: rgb(209, 255, 205)
+}
+
+section {
+    display: flex;
+    height: 500px;
+    margin: 0;
+}
+
+section h1 {
+    padding: 0 20px;
+    text-transform: uppercase;
+    width: 500px;
+}
+
+.square {
+    align-self: center;
+    background-color: rgb(255, 44, 107);
+    height: 150px;
+    width: 150px;
+}
+
+.color-change:hover {
+    background-color: blueviolet;
+    transition: 1s;
+}
+
+.move:hover {
+    margin-left: 200px;
+    transition: 1s;
+}
+
+.size:hover {
+    width: 350px;
+    transition: 1s;    
+}
+
+.transform:hover {
+    transform: rotateZ(180deg);
+    transition: 1s;
+}
+
+.combined:hover {
+    background-color: darkmagenta;
+    border-radius: 50%;
+    margin-left: 200px;
+    transform: rotateZ(180deg);
+    transition: 1s;
+}
+
+.perpetual {
+    font-size: 1.4rem;
+    font-weight: 800;
+    left: 100%;
+    overflow: hidden;
+    padding: 10px 20px;
+    position: fixed;
+    text-align: center;
+    top: 150px;
+    width: 600px;
+    z-index: 3;
+    animation: marquee 10s infinite;
+}
+
+@keyframes marquee {
+    0% {left: 100%;}
+    50% {left: 50%;}
+    100% {left: -100%;}
+}
