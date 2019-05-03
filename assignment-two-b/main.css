@@ -67,27 +67,51 @@ section h1 {
 }
 
 .square {
+    align-items: center;
     align-self: center;
     background-color: rgb(255, 44, 107);
+    color: white;
+    display: flex;
     height: 150px;
+    justify-content: center;
+    margin-right: 150px;
+    text-transform: uppercase;
     transition: 1s ease-in-out;
     width: 150px;
 }
 
-.color-change:hover {
+.color-hover:hover {
     background-color: blueviolet;
 }
 
-.move:hover {
+.color-click:active {
+    background-color: rgb(226, 183, 43);
+}
+
+.move-left:hover {
     margin-left: 200px;
 }
 
-.size:hover {
-    width: 350px;
+.move-up:hover {
+    margin-bottom: 200px;
 }
 
-.transform:hover {
+.grow:hover {
+    height: 200px;
+    width: 200px;
+}
+
+.shrink:hover {
+    height: 100px;
+    width: 100px;
+}
+
+.rotate:hover {
     transform: rotateZ(180deg);
+}
+
+.skew:hover {
+    transform: skew(40deg);
 }
 
 .combined:hover {
