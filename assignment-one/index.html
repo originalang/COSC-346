@@ -20,6 +20,7 @@
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <table id="pokedex">
+        <caption>List of Pokemon</caption>
         <tr>
             <th>Rank</th>
             <th>Name</th>
@@ -34,7 +35,9 @@
         </tr>
         <tr>
             <td>#002</td>
-            <td>Ivysaur</td>
+            <td>
+                <data value="#002">Ivysaur</data>
+            </td>
             <td>Grass Poison</td>
         </tr>
         <tr>
@@ -65,22 +68,37 @@
         </p>
 
         <form action="">
-            <div class="form-input">
-                Name: <br>
-                <input type="text" name="name">
-            </div>
+            <fieldset>
+                <legend>Fill out</legend>
+                <div class="form-input">
+                    <label for="ranks">Select one:</label>
+                    <input list="ranks" id="ranks">
+                    <datalist id="ranks">
+                        <option value="Charmeleon">
+                        <option value="Charizard">
+                        <option value="Squirtle">
+                        <option value="Wartotle">
+                        <option value="Blastoise">
+                    </datalist>
+                </div>
 
-            <div class="form-input">
-                Email: <br>
-                <input type="text" name="email">
-            </div>
-            <input id="submit" type="submit" value="Submit">
+                <div class="form-input">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name">
+                </div>
+
+                <div class="form-input">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">
+                </div>
+                <input id="submit" type="submit" value="Submit">
+            </fieldset>
         </form>
     </div>
 
     <hr>
 
-    Powered by <kbd>HTML</kbd>
+    Powered by <kbd><abbr title="Hypertext Markup Language">HTML</abbr></kbd>
     <address style="padding-top: 1em;">
         Created by <a href="mailto:me@example.com">Aaron George</a>. <br>
         1234 Address Street <br>
@@ -89,7 +107,7 @@
     </address>
 
     <pre style="padding-top: 10px;">
-        This assignment was <em>enjoyable</em>, <ins>informative</ins>, and a <mark>great way</mark> to become familiar with <code>HTML</code> concepts. 
+        This assignment was <em>enjoyable</em>, <ins>informative</ins>, and a <mark>great way</mark> to become familiar with <dfn>HTML</dfn> concepts. 
     </pre>
 </body>
 
