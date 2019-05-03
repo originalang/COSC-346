@@ -66,6 +66,20 @@ section h1 {
     width: 500px;
 }
 
+aside section {
+    height: 50px;
+    transition: 1s ease-in-out;
+    width: 100%;
+}
+
+aside section:nth-child(even) {
+    background-color: rgb(243, 255, 139);
+}
+
+aside section:hover {
+    height: 200px;
+}
+
 footer {
     bottom: 0;
     height: 30px;
