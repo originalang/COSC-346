@@ -21,6 +21,10 @@ nav a {
     text-transform: uppercase;
 }
 
+nav a:hover {
+    border-bottom: 1px solid rgb(158, 192, 255);
+}
+
 aside {
     background-color: rgb(250, 255, 204);
     height: 100%;
