@@ -3,46 +3,80 @@ var facey = document.querySelector('.facey');
 var commandInput = document.querySelector('input');
 var commandsText = document.querySelector('#commands');
 
-var floating = false;
-
 // append a style tag to the HTML page
 var styleElement = document.head.appendChild(document.createElement("style"));
 
 var commands = {
     'hello': function () {
         faceyText.innerText = 'Nice to meet you!';
+        animate(facey, 'bounce-facey');
     },
     'float': function () {
-        facey.style.animation = "float 3s forwards infinite";
-        floating = true
+        animate(facey, 'float-facey');
     },
     'spin': function () {
-        checkFloating(function () {
-            facey.style.transform = "rotateZ(180deg)";
-        });
+        animate(facey, 'spin-facey');
     },
     'surprise': function () {
-        styleElement.innerHTML = ".facey:after {border-radius: 50%;}";
+        styleElement.innerHTML = ".facey:after {left: 60%; width: 6px; height: 6px; border-radius: 50%; border-top: 2px solid black;}";
     },
     'grow': function () {
-        checkFloating(function () {
-            facey.style.transform = "scale(2, 2)";
-        });        
+        facey.style.transform = "scale(2, 2)";
     },
     'shrink': function () {
-        checkFloating(function () {
-            facey.style.transform = "scale(1, 1)";
-        });  
+        facey.style.transform = "scale(1, 1)";
     },
-    'frown': function () {
+    'sad': function () {
         styleElement.innerHTML = ".facey:after {transform: rotateZ(180deg);}";
     },
-    'derp': function () {
-        styleElement.innerHTML = ".facey:after {transform: translateX(10px) translateY(5px);}";
+    'happy': function () {
+        styleElement.innerHTML = ".facey:after {border-top: 2px solid black;}";
     },
-    'stop-float': function () {
-        facey.style.animation = "";
-        floating = false;
+    'astonish': function () {
+        styleElement.innerHTML = ".facey:after {transform: rotateZ(180deg); border-top: 2px solid black;}";
+    },
+    'derp': function () {
+        styleElement.innerHTML = ".facey:before {transform: rotate(15deg); width: 8px;}";
+    },
+    'upset': function () {
+        styleElement.innerHTML = ".facey:after {left: 60%; border-left: none; border-right:none; border-radius: 0; transform: rotate(10deg);}";
+    },
+    'hide': function () {
+        facey.style.opacity = "0";
+    },
+    'show': function () {
+        facey.style.opacity = "1";
+    },
+    'bounce': function () {
+        animate(facey, 'bounce-facey');
+    },
+    'roll': function () {
+        faceyText.innerText = 'Rolling...';
+        animate(facey, 'roll-facey');
+    },
+    'glow': function () {
+        faceyText.innerText = "I'm glowing!!";
+        animate(facey, 'glow-facey');
+    },
+    'wink': function () {
+        styleElement.innerHTML = ".facey:before {border-right: 6px solid black}"
+    },
+    'cyclops': function () {
+        faceyText.innerText = "I've got one eye!";
+        styleElement.innerHTML = ".facey:before {border-left: none}"
+    },
+    'annoy': function () {
+        styleElement.innerHTML = ".facey:before {left: 40%; border-left: 5px solid black; border-right: 5px solid black;} .facey:after {left: 60%; border-left: none; border-right:none; border-radius: 0;}";
+    },
+    'red': function () {
+        facey.style.backgroundColor = "red";
+    },
+    'fall': function () {
+        faceyText.innerText = "Use reset to bring me back!";
+        facey.style.transform = "translateY(600px)";
+    },
+    'block': function () {
+        facey.style.borderRadius = "20%";
     },
     'reset': function () {
         location.reload();
@@ -55,6 +89,7 @@ commandsText.innerText = commandNames.length + ' Commands: ' + commandNames.join
 
 commandInput.addEventListener('keyup', function () {
     inputValue = commandInput.value;
+    facey.offsetWidth;
     if (commandNames.includes(inputValue)) {
         commands[inputValue]();
         clearInput();
@@ -65,10 +100,8 @@ var clearInput = function () {
     commandInput.value = '';
 }
 
-var checkFloating = function (action) {
-    if (floating) {
-        faceyText.innerText = 'I need to stop floating first (stop-float)!';
-    } else {
-        action();
-    }
+var animate = function (elem, animationName) {
+    elem.classList.remove('float-facey', 'bounce-facey', 'spin-facey', 'roll-facey', 'glow-facey');
+    void elem.offsetWidth;
+    elem.classList.add(animationName);
 }
