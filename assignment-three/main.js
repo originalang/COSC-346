@@ -71,9 +71,17 @@ var commands = {
     'red': function () {
         facey.style.backgroundColor = "red";
     },
+    'fly': function () {
+        faceyText.innerText = "I'm flying!! Use the 'ground' command to bring me back!";
+        facey.style.transform = "translateY(-600px)";
+    },
     'fall': function () {
-        faceyText.innerText = "Use reset to bring me back!";
+        faceyText.innerText = "I'm falling!! Use the 'ground' command to bring me back!";
         facey.style.transform = "translateY(600px)";
+    },
+    'ground': function () {
+        faceyText.innerText = "I am at my position!!";
+        facey.style.transform = "none";
     },
     'block': function () {
         facey.style.borderRadius = "20%";
