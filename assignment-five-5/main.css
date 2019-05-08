@@ -1,0 +1,20 @@
+.selectors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selectors span {
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(60, 164, 255);
+    margin: 20px;
+    padding: 8px;
+    text-transform: capitalize;
+    transition: 0.5s;
+}
+
+.selectors span:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
