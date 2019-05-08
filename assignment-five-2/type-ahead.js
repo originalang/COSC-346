@@ -1,9 +1,6 @@
 class TypeAhead {
-    constructor() {
-        this.data = [];
-        fetch(endpoint)
-            .then(blob => blob.json())
-            .then(data => this.data.push(...data));
+    constructor(data) {
+        this.data = data;        
     }
 
     findMatches(wordToMatch, keyList) {
