@@ -20,4 +20,8 @@ function displayMatches() {
         `;
     }).join('');
     suggestions.innerHTML = html;
+
+    if (this.value === '') {
+        suggestions.innerHTML = '';
+    }
 }
