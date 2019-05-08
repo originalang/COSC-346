@@ -46,7 +46,7 @@ citySearch["searchInput"].addEventListener('keyup', function () {
 });
 
 // game of thrones search
-const gotEndpoint = 'http://api.tvmaze.com/singlesearch/shows?q=game-of-thrones&embed=episodes';
+const gotEndpoint = 'https://api.tvmaze.com/singlesearch/shows?q=game-of-thrones&embed=episodes';
 
 let gotd = [];
 
