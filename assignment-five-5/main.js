@@ -35,7 +35,7 @@ async function getShows() {
 
     var showNames = JSON.parse(localStorage.getItem("showNames"));
 
-    if (showNames.length === 0) {
+    if (showNames === null || showNames.length === 0) {
         toggleHelp();
     }
 
