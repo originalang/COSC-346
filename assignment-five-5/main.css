@@ -1,20 +1,144 @@
-.selectors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css?family=Stylish');
+
+html, body {
+    background-color: rgb(39, 39, 39);
+    padding: 0;
+    margin: 0;
 }
 
-.selectors span {
+.full-screen {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
+
+.overlay {
+    background-color: rgba(240, 255, 255, 0.438);
+    z-index: 5;
+}
+
+.shows-container {
+    overflow: hidden;
+}
+
+.shows {
+    background-color: rgb(49, 49, 49);
+    display: flex;
+    overflow: scroll;
+    overflow-y: hidden;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 0px;
+}
+
+.show-regular {
     border-radius: 5px;
-    color: white;
-    background-color: rgb(60, 164, 255);
+    cursor: pointer;
+    background-color: rgb(31, 31, 31);
     margin: 20px;
     padding: 8px;
-    text-transform: capitalize;
+    position: relative;
     transition: 0.5s;
 }
 
-.selectors span:hover {
+.show-regular:hover {
+    transform: scale(1.06);
+}
+
+.show-selected {
+    background-color: #ff6f7b;
+    border-radius: 5px;
     cursor: pointer;
-    transform: scale(1.1);
+    margin: 20px;
+    padding: 8px;
+    position: relative;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.no-image {
+    height: 295px;
+    width: 210px;
+}
+
+#add-show {
+    position: fixed;
+    right: -225px;
+    z-index: 10;
+}
+
+#add-show span {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 10px 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#add-show i {
+    vertical-align: middle;
+}
+
+#add-show input {
+    font-size: 20px;
+    height: 20px;
+    padding: 10px;
+    width: 200px;
+}
+
+.remove-show {
+    background-color: red;
+    border-radius: 50%;
+    display: none;
+    height: 20px;
+    padding: 4px;
+    position: absolute;
+    right: -4px;
+    text-align: center;
+    top: -4px;
+    width: 20px;
+}
+
+.remove-show:hover {
+    transform: scale(1.06);
+}
+
+.details {
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    padding: 30px;
+    width: 100%;
+}
+
+.details p {
+    color: white;
+    font-family: 'Stylish', sans-serif;
+    font-size: 1.5rem;
+    word-spacing: 4px;
+    width: 98%;
+}
+
+.float-in {
+    animation: float-in 1s forwards;
+}
+
+.float-out {
+    animation: float-out 1s forwards;
+}
+
+@keyframes float-in {
+    from {right: -225px}
+    to {right: 10px}
+}
+
+@keyframes float-out {
+    from {right: 10px}
+    to {right: -225px}
 }

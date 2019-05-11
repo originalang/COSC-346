@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="selectors"></div>
+    <div id="help" style="display: none;" class="full-screen overlay">
+        <span style="position: fixed; width: 30%; top: 3%; right: 20%;">
+            <b>1. Click the '+' to add a new TV show. Seriously, pick a show, any show, and type in its name to
+                continue.</b>
+        </span>
+        <span style="position: fixed; width: 30%; top: 40%; right: 50%;">
+            <b>2. Once you have entered all of your favorite show names, they will be displayed in this section. You will be able to scroll through the list of shows. Click on one of shows to view details about it. Click <a href="" onclick="toggleHelp()">here</a> to close this help.</b>
+        </span>
+    </div>
+
+    <div id="add-show" style="margin-top: 20px;">
+        <span>
+            <i id="add-icon" class="fas fa-plus"></i>
+            <i id="close-icon" style="display: none;" class="fas fa-times"></i>
+        </span>
+        <input type="text" placeholder="Enter show name...">
+    </div>
+
+    <div class="shows-container">
+        <div class="shows"></div>
+
+        <div class="details">
+            <p></p>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>
