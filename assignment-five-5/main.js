@@ -17,6 +17,8 @@ function addShow(name, callback) {
             }
 
             callback();
+        } else {
+            alert('The specified show was not found. Please ensure that the input is correct, or try a different show');
         }
     });
 }
