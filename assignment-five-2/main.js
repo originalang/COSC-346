@@ -30,6 +30,15 @@ citySearch["searchInput"].addEventListener('keyup', function () {
 
     const matchArray = citySearch["typeAhead"].findMatches(this.value, ["city", "state"]);
 
+    if (matchArray.length === 0) {
+        citySearch["suggestions"].innerHTML = `
+        <li>
+            <span>No results found</span>
+        </li>
+        `;
+        return;
+    }
+
     const html = matchArray.map(place => {
         const regex = new RegExp(this.value, 'gi');
         const cityName = place.city.replace(regex, `<mark>${this.value}</mark>`);
@@ -57,18 +66,26 @@ fetch(gotEndpoint)
 let gotSearch = search("got", gotd);
 
 gotSearch["searchInput"].addEventListener('keyup', function () {
-    console.log(this.value)
     if (this.value === '') {
         gotSearch["suggestions"].innerHTML = '';
     }
 
-    if (this.value.length < 3) return
+    if (this.value.length < 3) return    
 
     const matchArray = gotSearch["typeAhead"].findMatches(this.value, ["name"]);
 
+    if (matchArray.length === 0) {
+        gotSearch["suggestions"].innerHTML = `
+        <li>
+            <span>No results found</span>
+        </li>
+        `;
+        return;
+    }
+
     const html = matchArray.map(episode => {
         const regex = new RegExp(this.value, 'gi');
-        console.log(episode.name);
+
         const episodeName = episode.name.replace(regex, `<mark>${this.value}</mark>`);
 
         return `
@@ -78,5 +95,5 @@ gotSearch["searchInput"].addEventListener('keyup', function () {
         `;
     }).join('');
 
-    gotSearch["suggestions"].innerHTML = html;
+    gotSearch["suggestions"].innerHTML = html;    
 });
