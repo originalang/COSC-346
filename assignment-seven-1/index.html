@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>D3</title>
+</head>
+
+<body>
+    <div align="center">
+        <span style="font-size:1.5rem;">Experimenting with the D3 visualization found <a href="https://bl.ocks.org/mbostock/3231298" target="_blank">here</a></span><br>
+        <span style="font-size:1.2rem;">[ Modify the values below to interact with the visualization ]</span>
+        <div id="canvas"></div>
+        <div>
+            <input type="range" id="balls" name="balls" min="10" max="300" value="10">
+            <label for="balls">Number of Balls</label>&nbsp;&nbsp;&nbsp;
+            <span id="balls-value"></span>
+        </div>
+        <div>
+            <input type="range" id="colors" name="colors" min="1" max="11" value="1">
+            <label for="colors">Number of Colors</label>&nbsp;&nbsp;&nbsp;
+            <span id="colors-value"></span>
+        </div>
+        <button>Reset</button>
+    </div>
+</body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="main.js"></script>
+
+</html>
