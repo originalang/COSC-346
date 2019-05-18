@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibility</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <!-- replace div tag with header tag to comply with html5 semantic standards -->
+    <header class="header-part">
+        <!-- remove the background image and replace it with the text from the image. This will make the text accessible to screen readers -->
+        <h1 align="center" aria-label="Welcome" style="font-size: 5rem;">Welcome to my website. It is mostly about clicking things.</h1>
+
+        <div class="header-container">
+            <h1>Click the blue square to begin.</h1>
+            <div class="flex-container">
+                <!-- change all div elements to buttons so that the enter key will trigger their functionality -->
+                <!-- add a tabindex to specify how the user can tab through the sqaures -->
+                <!-- add an aria label to describe what the squares are -->
+                <button class="red square" tabindex="1" aria-label="Red square">Red</button>
+                <button class="blue square" tabindex="2" aria-label="Blue square"></button>
+                <button class="green square" tabindex="3" aria-label="Green square"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- replace div tag with main tag to comply with html5 semantic standards -->
+    <main class="main-part hidden">
+
+        <!-- add an aria label to the main button -->
+        <button class="show-bunny" aria-label="Show Bunny">
+            See another cutey.
+        </button>
+        <!-- provide an aria-label and a title for the images -->
+        <!-- also add an alt attribute to the images -->
+        <img data-id="1" class="active bunny-image" alt="A bunny stretching" aria-label="A bunny stretching" title="A bunny stretching" src="./images/cutey-patutey.jpg">
+        <img data-id="2" class="bunny-image" alt="Two bunnies kissing" aria-label="Two bunnies kissing" title="Two bunnies kissing" src="./images/two-bunnies.jpg">
+        <img data-id="3" class="bunny-image" alt="Two bunnies hugging" aria-label="Two bunnies hugging" title="Two bunnies hugging" src="./images/hugs.jpg">
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
