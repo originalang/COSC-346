@@ -1,0 +1,64 @@
+@mixin semantic-display($bg-color, $h) {
+  align-items: center;
+  background-color: $bg-color;
+  border: solid black 2px;
+  border-radius: 5px;
+  display: flex;
+  height: $h;
+  padding: 20px;
+}
+
+@mixin main-section-div($bg-color) {
+  background-color: $bg-color;
+  display: inline-block;
+  height: 100px;
+  width: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+nav {
+  @include semantic-display(blueviolet, 3rem);
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  a {
+    color: #eeeeee;
+    font-weight: 700;
+  }
+}
+
+main {
+  height: 100%;
+
+  section {
+    @include semantic-display(beige, 300px);
+  }
+}
+
+main section .div-blue {
+  @include main-section-div(blue);
+}
+
+main section .div-green {
+  @include main-section-div(green);
+}
+
+main section .div-red {
+  @include main-section-div(red);
+}
+
+@for $i from 1 through 5 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+}
