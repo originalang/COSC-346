@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header align="center">
+        Components created using React.js and Semantic UI
+    </header>
+
+    <div id="reveal" class="center">
+        <span>Reveal Images</span>
+    </div>
+    <div id="amount" class="center">
+        <span>Enter Amounts</span>
+    </div>
+    <div id="message" class="center">
+        <span>Display Messages</span>
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+        function RevealRight(props) {
+            return <div class="ui small circular rotate reveal image">
+                    <img src={props.visible} class="visible content" />
+                    <img src={props.hidden} class="hidden content" />
+                  </div>;
+        }
+
+        function AmountInput(props) {
+            return <div class="ui right labeled input">
+                    <label for="amount" class="ui label">{props.symbol}</label>
+                    <input type="text" placeholder={props.placeholder} id={props.id} />
+                    <div class="ui basic label">.00</div>
+                  </div>;
+        }
+
+        function Message(props) {
+            return <div class="ui message">
+                    <div class="header">
+                      {props.header}
+                    </div>
+                    <p>{props.details}</p>
+                  </div>;
+        }
+
+        appendDOM('div', <RevealRight hidden="https://semantic-ui.com/images/avatar/large/stevie.jpg" visible="https://semantic-ui.com/images/wireframe/square-image.png" />, document.getElementById('reveal'));
+        appendDOM('div', <RevealRight hidden="https://semantic-ui.com/images/avatar/large/ade.jpg" visible="https://semantic-ui.com/images/wireframe/square-image.png" />, document.getElementById('reveal'));
+        
+        appendDOM('div', <AmountInput id="dollar" symbol="$" placeholder="Dollar amount.." />, document.getElementById('amount'));
+        appendDOM('div', <AmountInput id="rupees" symbol="₹" placeholder="Rupee amount.." />, document.getElementById('amount'));
+
+        appendDOM('div', <Message header="This is a message!" details="These are the details of the message." />, document.getElementById('message'));
+        
+        function appendDOM(nodeType, element, root) {
+            const newNode = document.createElement(nodeType);
+
+            root.appendChild(newNode);
+            ReactDOM.render(element, newNode);
+        }
+    </script>
+</body>
+
+</html>
